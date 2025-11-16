@@ -14,7 +14,7 @@ ffmpeg_path = r"C:\ffmpeg\ffmpeg.exe"
 
 def ffmpeg_custom_writer():
     writer = FFMpegWriter(fps=30, metadata=dict(artist='Me'), bitrate=1800)
-    writer.bin_path = lambda: r"C:\ffmpeg\ffmpeg.exe"  # Your actual ffmpeg path
+    writer.bin_path = lambda: r"C:\ffmpeg\ffmpeg.exe"  
     return writer
 
 
@@ -112,7 +112,8 @@ anim = matplotlib.animation.FuncAnimation(fig, update, frames=3000, interval=50,
 text = f"Kill rate: {k}\n\nFeed rate: {f}"
 plt.text(518, 300, text, fontsize = 9)
 
-# Save with the custom ffmpeg writer
+# Save 
 anim.save(filename=f"f_{f}__k_{k}.mp4", writer=ffmpeg_custom_writer())
 
 print("done")
+
